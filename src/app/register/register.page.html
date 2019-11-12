@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>JuanBody - Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser()" style="padding-top: 30px;">
+    <ion-list>
+      <ion-label>Registro de Usuario</ion-label>
+    </ion-list>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nombres <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="firstname" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Apellidos <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="lastname" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Usuario <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="username" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="password" required type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Confirmar Contraseña <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="confirm" required type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Edad<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="age" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Estatura<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="height" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Peso<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="weight" required type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Registrarse</ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-padding">
+      <ion-button expand="block" type="button" class="ion-no-margin" (click)="goToLogin()">Iniciar Sesión
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

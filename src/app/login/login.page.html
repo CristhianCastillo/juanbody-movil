@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>JuanBody - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" style="padding-top: 30px;">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Usuario <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="username" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="password" required type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Iniciar Sesión</ion-button>
+    </div>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-padding">
+      <ion-button expand="block" type="button" class="ion-no-margin" (click)="goToRegister()">Registrarse</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

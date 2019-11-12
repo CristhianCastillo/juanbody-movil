@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Registrar Practica
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <form [formGroup]="exerciseForm" (ngSubmit)="registerExercise()" style="padding-top: 30px;">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label>Ejercicio</ion-label>
+        <ion-select formControlName="exercise" okText="Okay" cancelText="Dismiss">
+          <ion-select-option *ngFor="let exercise of exercises;" [value]="exercise.id">{{exercise.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tiempo <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="time" required type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Registrar Ejercicio</ion-button>
+    </div>
+  </form>
+</ion-content>

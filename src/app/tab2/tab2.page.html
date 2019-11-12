@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Tu Entrenamiento
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let training of trainings;">
+    <ion-card-header>
+      <ion-card-subtitle>Tiempo: {{training.time}}</ion-card-subtitle>
+      <ion-card-title *ngIf="training.exerciseEntity.name">{{training.exerciseEntity.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Descripcion Ejercicio</strong></p>
+      <p>Descripción: {{training.exerciseEntity.description}}</p>
+      <p><strong>Metas Alcanzadas</strong></p>
+      <p *ngIf="training.goalEntity">Nombre: {{training.goalEntity.name}}</p>
+      <p *ngIf="training.goalEntity">Descripción: {{training.goalEntity.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
